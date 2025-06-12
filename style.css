@@ -1,0 +1,169 @@
+body {
+  margin: auto;
+  padding: auto;
+  height: 100vh;
+  background: linear-gradient(to right, #cc96ff, #ff93f8, #ff94ca);
+}
+
+body.spotify {
+  background-color: #121212;
+  font-family: Arial, sans-serif;
+  margin: 40px;
+  color: white;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+  padding-bottom: 40px;
+}
+
+.spotify-share {
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, border 0.4s ease-in-out;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.spotify-share:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.cover-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.cover {
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(255, 192, 203, 0.5);
+  transition: transform 0.4s ease-in-out;
+}
+
+.spotify-share:hover .cover {
+  transform: scale(1.07);
+}
+
+.track-info {
+  font-size: 16px;
+  line-height: 1.4;
+  padding-top: 8px;
+  transition: color 0.3s ease-in-out;
+}
+
+.track-info strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 17px;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Texto personalizado com emojis */
+.text1 strong::after { content: " 💫"; }
+.text2 strong::after { content: " 💖"; }
+.text3 strong::after { content: " 🎵"; }
+.text4 strong::after { content: " 💌"; }
+.text5 strong::after { content: " ✨"; }
+.text6 strong::after { content: " 🌸"; }
+.text7 strong::after { content: " 🎷"; }
+.text8 strong::after { content: " 💜"; }
+.text9 strong::after { content: " 🌙"; }
+.text10 strong::after { content: " 🎶"; }
+.text11 strong::after { content: " 💕"; }
+.text12 strong::after { content: " 🌹"; }
+.text13 strong::after { content: " 🌺"; }
+.text14 strong::after { content: " 🌊"; }
+.text15 strong::after { content: " 🌠"; }
+.text16 strong::after { content: " 🎙️"; }
+.text17 strong::after { content: " 💞"; }
+.text18 strong::after { content: " 💘"; }
+.text19 strong::after { content: " 🌌"; }
+.text20 strong::after { content: " 🎧"; }
+
+/* Cores do texto */
+.text1 strong, .text1 span { color: #000; }
+.text2 strong, .text2 span { color: #f0e5ff; }
+.text3 strong, .text3 span { color: #000; }
+.text4 strong, .text4 span { color: #fff; }
+.text5 strong, .text5 span { color: #fff; }
+.text6 strong, .text6 span { color: #000; }
+.text7 strong, .text7 span { color: #000; }
+.text8 strong, .text8 span { color: #fff; }
+.text9 strong, .text9 span { color: #fff; }
+.text10 strong, .text10 span { color: #000; }
+.text11 strong, .text11 span { color: #000; }
+.text12 strong, .text12 span { color: #fff; }
+.text13 strong, .text13 span { color: #000; }
+.text14 strong, .text14 span { color: #000; }
+.text15 strong, .text15 span { color: #000; }
+.text16 strong, .text16 span { color: #fff; }
+.text17 strong, .text17 span { color: #fff; }
+.text18 strong, .text18 span { color: #000; }
+.text19 strong, .text19 span { color: #fff; }
+.text20 strong, .text20 span { color: #fff; }
+
+/* Cores dos cards */
+.card1  { background-color: #f6c7ff; }
+.card2  { background-color: #a32100; }
+.card3  { background-color: #ffcef3; }
+.card4  { background-color: #570063; }
+.card5  { background-color: #ffbe0b; }
+.card6  { background-color: #f7b8ff; }
+.card7  { background-color: #d8c883; }
+.card8  { background-color: #7a755f; }
+.card9  { background-color: #1466ff; }
+.card10 { background-color: #fffc46; }
+.card11 { background-color: #f8ff8f; }
+.card12 { background-color: #6b6b6b; }
+.card13 { background-color: #ffd27d; }
+.card14 { background-color: #4a7ba8; }
+.card15 { background-color: #8cc7ff; }
+.card16 { background-color: #da0f00; }
+.card17 { background-color: #ff724f; }
+.card18 { background-color: #7eaaaa; }
+.card19 { background-color: #003b2f; }
+.card20 { background-color: #9e733a; }
+
+
+.floating-heart {
+  position: fixed;
+  bottom: -30px;
+  font-size: 24px;
+  animation-name: flutuar;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+@keyframes flutuar {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.5);
+    opacity: 0;
+  }
+}

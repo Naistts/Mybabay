@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Clica na cartinha</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+     <!-- Clique na imagem para iniciar a animação -->
+  <div class="stopmotion-container" onclick="animarCartinha()">
+    <img id="cartinha" src="frame1.png" alt="Cartinha pixel-art">
+  </div>
+
+  <script>
+    /* Lista de quadros em ordem */
+    const frames = [
+      "frame1.png",
+      "frame2.png",
+      "frame3.png",
+      "frame4.png",
+      "frame5.png"
+    ];
+
+    let frameAtual = 0;   // índice do quadro mostrado
+
+    function animarCartinha() {
+      const img = document.getElementById("cartinha");
+
+      // Impede várias execuções simultâneas
+      if (img.dataset.animando === "true") return;
+      img.dataset.animando = "true";
+
+      /* Troca de quadro a cada 120 ms (≈8,3 fps) */
+      const intervalo = setInterval(() => {
+        frameAtual++;
+
+        if (frameAtual < frames.length) {
+          img.src = frames[frameAtual];
+        } else {
+          clearInterval(intervalo);          // Termina a animação
+          frameAtual = 0;                    // Reinicia para próximo clique
+          setTimeout(() => {
+            window.location.href = "Pagina2.html"; // redireciona
+          }, 400);                            // pequena pausa antes do redirect
+        }
+      }, 120);
+    }
+  </script>
+   <script>
+  const emojis = ['💖','💘','💕','💓','💗'];
+  function criarEmojiFlutuante() {
+    const emoji = document.createElement('div');
+    emoji.className = 'floating-heart';
+    emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    emoji.style.left = Math.random() * 100 + 'vw';
+    emoji.style.animationDuration = (Math.random() * 3 + 3) + 's';
+    document.body.appendChild(emoji);
+
+    setTimeout(() => {
+      emoji.remove();
+    }, 5000);
+  }
+
+  setInterval(criarEmojiFlutuante, 400);
+</script>
+
+</body>
+</html>
